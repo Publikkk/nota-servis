@@ -19,12 +19,8 @@
             --error-light: #fef2f2;
             --wa-color: #25d366;
             --wa-hover: #20ba5a;
-            
-            /* Efek Bayangan Tipis */
             --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
             --shadow-focus: 0 0 0 4px rgba(26, 115, 232, 0.15);
-            
-            /* Animasi Transisi Halus */
             --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -41,7 +37,6 @@
             box-sizing: border-box;
         }
 
-        /* Container Web Utama */
         .app-container {
             background: #ffffff;
             padding: 40px 32px;
@@ -54,7 +49,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* Header UI Web */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -82,7 +76,6 @@
             color: #0f172a;
         }
 
-        /* Navigasi Tab */
         .tabs {
             display: flex;
             background-color: #f1f5f9;
@@ -109,7 +102,6 @@
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
-        /* Konten Form */
         .tab-content {
             display: none;
         }
@@ -164,7 +156,6 @@
             background-color: var(--primary-hover);
         }
 
-        /* Pesan Status */
         .status-message {
             margin-top: 20px;
             font-size: 13.5px;
@@ -177,12 +168,10 @@
         .status-loading { background-color: var(--primary-light); color: var(--primary); display: block; }
         .status-success { background-color: var(--success-light); color: var(--success); display: block; }
 
-        /* Wadah Nota saat Tampil di Web */
         #nota-box {
             margin-top: 24px;
         }
 
-        /* 3 Tombol Action Footer (Tetap Tampil di Web) */
         .nota-footer-ui {
             margin-top: 24px;
             display: flex;
@@ -204,30 +193,18 @@
             transition: var(--transition-smooth);
             text-decoration: none;
         }
-        .btn-wa-self-ui {
-            background-color: var(--wa-color);
-            color: white;
-        }
+        .btn-wa-self-ui { background-color: var(--wa-color); color: white; }
         .btn-wa-self-ui:hover { background-color: var(--wa-hover); }
-        .btn-download-ui {
-            background-color: #334155;
-            color: white;
-        }
+        .btn-download-ui { background-color: #334155; color: white; }
         .btn-download-ui:hover { background-color: #1e293b; }
-        .btn-cs-ui {
-            background-color: #ffffff;
-            color: #334155;
-            border: 1.5px solid var(--border-color);
-        }
+        .btn-cs-ui { background-color: #ffffff; color: #334155; border: 1.5px solid var(--border-color); }
         .btn-cs-ui:hover { background-color: #f8fafc; }
 
         /* ========================================= */
-        /* CSS KHUSUS UNTUK TAMPILAN CETAK PDF */
-        /* INI YANG MENGUBAH LAYOUT SESUAI GAMBAR */
+        /* CSS KHUSUS UNTUK TAMPILAN CETAK/PDF */
         /* ========================================= */
-        
         #nota-print-area {
-            display: none; /* Sembunyikan di layar web biasa */
+            display: none;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #333;
             line-height: 1.4;
@@ -238,22 +215,17 @@
             font-size: 12px;
         }
 
-        /* Tata Letak Header Nota */
         .p-header-main {
             display: flex;
             justify-content: space-between;
             align-items: start;
             margin-bottom: 40px;
         }
-
-        /* Kolom Kiri: Logo & Info Pengirim */
-        .p-sender {
-            width: 50%;
-        }
+        .p-sender { width: 50%; }
         .p-logo {
             font-size: 20px;
             font-weight: bold;
-            color: #1e3a8a; /* Warna biru profesional */
+            color: #1e3a8a;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -266,16 +238,9 @@
             margin-bottom: 5px;
             font-weight: 600;
         }
-        .p-sender-address {
-            font-size: 11px;
-            color: #555;
-        }
-
-        /* Kolom Kanan: Judul Invoice, No, Tanggal */
-        .p-invoice-info {
-            width: 40%;
-            text-align: right;
-        }
+        .p-sender-address { font-size: 11px; color: #555; }
+        
+        .p-invoice-info { width: 40%; text-align: right; }
         .p-invoice-title {
             font-size: 32px;
             font-weight: bold;
@@ -284,127 +249,42 @@
             color: #111;
             margin-bottom: 10px;
         }
-        .p-info-row {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 3px;
-        }
-        .p-info-label {
-            color: #777;
-            width: 90px;
-            text-align: left;
-        }
-        .p-info-value {
-            font-weight: 600;
-            text-align: right;
-            width: 130px;
-        }
+        .p-info-row { display: flex; justify-content: flex-end; margin-bottom: 3px; }
+        .p-info-label { color: #777; width: 90px; text-align: left; }
+        .p-info-value { font-weight: 600; text-align: right; width: 130px; }
 
-        /* Tata Letak Info Penerima */
-        .p-recipient {
-            width: 35%;
-            margin-bottom: 40px;
-            margin-left: auto; /* Posisi di kanan seperti referensi */
-            text-align: right;
-        }
+        .p-recipient { width: 35%; margin-bottom: 40px; margin-left: auto; text-align: right; }
 
-        /* Tabel Deskripsi */
-        .p-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .p-table th {
-            text-align: left;
-            text-transform: uppercase;
-            font-size: 11px;
-            color: #555;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-        }
-        .p-table td {
-            padding: 15px 10px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-        /* Penyesuaian kolom tabel agar mirip referensi */
-        .p-table th:nth-child(1), .p-table td:nth-child(1) { width: 50%; } /* Deskripsi */
-        .p-table th:nth-child(2), .p-table td:nth-child(2) { width: 15%; text-align: right; } /* Harga */
-        .p-table th:nth-child(3), .p-table td:nth-child(3) { width: 10%; text-align: center; } /* Qty */
-        .p-table th:nth-child(4), .p-table td:nth-child(4) { width: 10%; text-align: right; color: #ef4444; } /* Diskon */
-        .p-table th:nth-child(5), .p-table td:nth-child(5) { width: 15%; text-align: right; font-weight: 600; } /* Total */
+        .p-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .p-table th { text-align: left; text-transform: uppercase; font-size: 11px; color: #555; padding: 10px; border-bottom: 2px solid #ddd; }
+        .p-table td { padding: 15px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+        .p-table th:nth-child(1), .p-table td:nth-child(1) { width: 50%; }
+        .p-table th:nth-child(2), .p-table td:nth-child(2) { width: 15%; text-align: right; }
+        .p-table th:nth-child(3), .p-table td:nth-child(3) { width: 10%; text-align: center; }
+        .p-table th:nth-child(4), .p-table td:nth-child(4) { width: 10%; text-align: right; color: #ef4444; }
+        .p-table th:nth-child(5), .p-table td:nth-child(5) { width: 15%; text-align: right; font-weight: 600; }
 
-        /* Bagian Total di Kanan Bawah */
-        .p-total-section {
-            width: 40%;
-            margin-left: auto;
-            text-align: right;
-            margin-bottom: 40px;
-        }
-        .p-total-row {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px 10px;
-            color: #555;
-        }
-        .p-total-final {
-            border-top: 2px solid #ddd;
-            padding-top: 10px;
-            margin-top: 5px;
-            color: #1a73e8; /* Biru seperti referensi */
-            font-weight: bold;
-            font-size: 16px;
-        }
+        .p-total-section { width: 40%; margin-left: auto; text-align: right; margin-bottom: 40px; }
+        .p-total-row { display: flex; justify-content: flex-end; padding: 5px 10px; color: #555; }
+        .p-total-final { border-top: 2px solid #ddd; padding-top: 10px; margin-top: 5px; color: #1a73e8; font-weight: bold; font-size: 16px; }
 
-        /* Catatan, Garansi & Metode Pembayaran */
-        .p-footer-notes {
-            font-size: 11px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .p-notes-title {
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .p-notes-list {
-            margin: 0;
-            padding-left: 15px;
-        }
-        .p-notes-list li {
-            margin-bottom: 3px;
-        }
-        
-        .p-thank-you {
-            margin-top: 30px;
-            font-size: 12px;
-        }
-        .p-payment-info {
-            margin-top: 5px;
-            font-weight: 600;
-        }
+        .p-footer-notes { font-size: 11px; color: #555; line-height: 1.6; margin-bottom: 30px; text-align: left; }
+        .p-notes-title { font-weight: bold; text-transform: uppercase; color: #333; margin-bottom: 5px; }
+        .p-notes-list { margin: 0; padding-left: 15px; }
+        .p-notes-list li { margin-bottom: 3px; }
+        .p-thank-you { margin-top: 30px; font-size: 12px; }
+        .p-payment-info { margin-top: 5px; font-weight: 600; }
 
-        /* Pengaturan Cetak Browser */
         @media print {
-            body {
-                background: #fff;
-                padding: 0;
-                margin: 0;
-                display: block;
-                min-height: auto;
-            }
-            .app-container {
-                display: none; /* Sembunyikan UI web */
-            }
+            body { background: #fff; padding: 0; margin: 0; display: block; min-height: auto; }
+            .app-container { display: none; }
             #nota-print-area {
-                display: block; /* Tampilkan area cetak profesional */
+                display: block;
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 210mm; /* Lebar A4 */
-                min-height: 297mm; /* Tinggi A4 */
+                width: 210mm;
+                min-height: 297mm;
                 border: none;
                 box-shadow: none;
             }
@@ -435,7 +315,7 @@
                 <input type="text" id="inp_nama" placeholder="Nama Lengkap" required>
             </div>
             <div class="form-group">
-                <label>Nomor Telepon / WA (Awali 08... atau 62...)</label>
+                <label>Nomor Telepon / WA</label>
                 <input type="tel" id="inp_hp" placeholder="Contoh: 0812345678" required>
             </div>
             <div class="form-group">
@@ -444,7 +324,7 @@
             </div>
             <div class="form-group">
                 <label>Detail Perbaikan / Jasa</label>
-                <textarea id="inp_perbaikan" placeholder="Deskripsi kerusakan dan sparepart yang diganti" required></textarea>
+                <textarea id="inp_perbaikan" placeholder="Deskripsi kerusakan dan sparepart" required></textarea>
             </div>
             <div class="form-group">
                 <label>Harga / Biaya (Rp)</label>
@@ -458,34 +338,32 @@
     <div id="cari-tab" class="tab-content">
         <div class="form-group">
             <label>Masukkan Nomor Nota</label>
-            <input type="text" id="search_nota" placeholder="Contoh: REPAIR-1001">
+            <input type="text" id="search_nota" placeholder="Contoh: 1001">
         </div>
         <button onclick="cariNota()" class="btn-submit">Cari Nota</button>
         <div id="search-status" class="status-message"></div>
+    </div>
 
-        <div id="nota-box" style="display: none;">
-            <div style="text-align: center; color: var(--success); background-color: var(--success-light); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2);">
-                <strong>Nota Berhasil Ditemukan!</strong><br>
-                Gunakan tombol di bawah untuk mencetak atau mengirim.
-            </div>
+    <div id="nota-box" style="display: none;">
+        <div id="alert-success-msg" style="text-align: center; color: var(--success); background-color: var(--success-light); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <strong>Nota Berhasil Ditemukan!</strong>
+        </div>
 
-            <div class="nota-footer-ui">
-                <button class="btn-action-ui btn-wa-self-ui" onclick="kirimNotaKeWA()">💬 Kirim Nota ke WA Saya</button>
-                <button class="btn-action-ui btn-download-ui" onclick="window.print()">💾 Simpan / Cetak PDF</button>
-                <button class="btn-action-ui btn-cs-ui" onclick="hubungiOwner()">📞 Hubungi CS Toko</button>
-            </div>
+        <div class="nota-footer-ui">
+            <button class="btn-action-ui btn-wa-self-ui" onclick="kirimNotaKeWA()">💬 Kirim Nota ke WA Customer</button>
+            <button class="btn-action-ui btn-download-ui" onclick="window.print()">💾 Simpan / Cetak PDF</button>
+            <button class="btn-action-ui btn-cs-ui" onclick="hubungiOwner()">📞 Hubungi CS Toko</button>
         </div>
     </div>
 </div>
 
-
 <div id="nota-print-area">
-    
     <div class="p-header-main">
         <div class="p-sender">
             <div class="p-logo">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#1e3a8a"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                <span class="p-business-name-target">PRO PHONE SERVICE</span> </div>
+                <span class="p-business-name-target">PRO PHONE SERVICE</span>
+            </div>
             <div class="p-info-block-title">DARI (PENGIRIM)</div>
             <div class="p-sender-info">
                 <div style="font-weight: 600;" class="p-business-name-target">PRO PHONE SERVICE</div>
@@ -493,528 +371,23 @@
                     Jl. Rajawali 2 No 22 RT 03 / RW 04, Kelurahan Margasari,<br>
                     Kecamatan Tigaraksa, Kabupaten Tangerang,<br>
                     Banten 15720<br>
-                    6285210987654 </div>
+                    HP: 6285210987654
+                </div>
             </div>
         </div>
         <div class="p-invoice-info">
             <div class="p-invoice-title">INVOICE</div>
             <div class="p-info-row"><span class="p-info-label">No. Invoice</span> <span class="p-info-value" id="p_lbl_nota">INV-xxxx</span></div>
             <div class="p-info-row"><span class="p-info-label">Tanggal</span> <span class="p-info-value" id="p_lbl_tanggal">-</span></div>
-            <div class="p-info-row"><span class="p-info-label">Jatuh Tempo</span> <span class="p-info-value" id="p_lbl_tanggal_due">-</span></div> </div>
-    </div>
-
-    <div class="p-recipient">
-        <div class="p-info-block-title">KEPADA (PENERIMA)```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Nota Digital - Profesional Edition</title>
-    <style>
-        :root {
-            --primary: #1a73e8;
-            --primary-hover: #1557b0;
-            --primary-light: #e8f0fe;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --success: #10b981;
-            --success-light: #ecfdf5;
-            --error: #ef4444;
-            --error-light: #fef2f2;
-            --wa-color: #25d366;
-            --wa-hover: #20ba5a;
-            
-            /* Efek Bayangan Tipis */
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-            --shadow-focus: 0 0 0 4px rgba(26, 115, 232, 0.15);
-            
-            /* Animasi Transisi Halus */
-            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        /* Container Web Utama */
-        .app-container {
-            background: #ffffff;
-            padding: 40px 32px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            width: 100%;
-            max-width: 480px;
-            box-sizing: border-box;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: var(--transition-smooth);
-        }
-
-        /* Header UI Web */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .logo-container {
-            width: 56px;
-            height: 56px;
-            background-color: var(--primary-light);
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            fill: var(--primary);
-        }
-        .business-name-ui {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            color: #0f172a;
-        }
-
-        /* Navigasi Tab */
-        .tabs {
-            display: flex;
-            background-color: #f1f5f9;
-            padding: 6px;
-            border-radius: 10px;
-            margin-bottom: 28px;
-            gap: 4px;
-        }
-        .tab-button {
-            flex: 1;
-            padding: 10px 12px;
-            background: none;
-            border: none;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition-smooth);
-        }
-        .tab-button.active {
-            background-color: #ffffff;
-            color: var(--primary);
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        /* Konten Form */
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-        label {
-            display: block;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 14px;
-            color: var(--text-color);
-            transition: var(--transition-smooth);
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-focus);
-        }
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        button.btn-submit {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-        }
-        button.btn-submit:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Pesan Status */
-        .status-message {
-            margin-top: 20px;
-            font-size: 13.5px;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            display: none;
-        }
-        .status-error { background-color: var(--error-light); color: var(--error); display: block; }
-        .status-loading { background-color: var(--primary-light); color: var(--primary); display: block; }
-        .status-success { background-color: var(--success-light); color: var(--success); display: block; }
-
-        /* Wadah Nota saat Tampil di Web */
-        #nota-box {
-            margin-top: 24px;
-        }
-
-        /* 3 Tombol Action Footer (Tetap Tampil di Web) */
-        .nota-footer-ui {
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .btn-action-ui {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            text-decoration: none;
-        }
-        .btn-wa-self-ui {
-            background-color: var(--wa-color);
-            color: white;
-        }
-        .btn-wa-self-ui:hover { background-color: var(--wa-hover); }
-        .btn-download-ui {
-            background-color: #334155;
-            color: white;
-        }
-        .btn-download-ui:hover { background-color: #1e293b; }
-        .btn-cs-ui {
-            background-color: #ffffff;
-            color: #334155;
-            border: 1.5px solid var(--border-color);
-        }
-        .btn-cs-ui:hover { background-color: #f8fafc; }
-
-        /* ========================================= */
-        /* CSS KHUSUS UNTUK TAMPILAN CETAK PDF */
-        /* INI YANG MENGUBAH LAYOUT SESUAI GAMBAR */
-        /* ========================================= */
-        
-        #nota-print-area {
-            display: none; /* Sembunyikan di layar web biasa */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333;
-            line-height: 1.4;
-            width: 100%;
-            background: #fff;
-            padding: 40px;
-            box-sizing: border-box;
-            font-size: 12px;
-        }
-
-        /* Tata Letak Header Nota */
-        .p-header-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 40px;
-        }
-
-        /* Kolom Kiri: Logo & Info Pengirim */
-        .p-sender {
-            width: 50%;
-        }
-        .p-logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1e3a8a; /* Warna biru profesional */
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .p-info-block-title {
-            text-transform: uppercase;
-            font-size: 11px;
-            color: #777;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .p-sender-address {
-            font-size: 11px;
-            color: #555;
-        }
-
-        /* Kolom Kanan: Judul Invoice, No, Tanggal */
-        .p-invoice-info {
-            width: 40%;
-            text-align: right;
-        }
-        .p-invoice-title {
-            font-size: 32px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #111;
-            margin-bottom: 10px;
-        }
-        .p-info-row {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 3px;
-        }
-        .p-info-label {
-            color: #777;
-            width: 90px;
-            text-align: left;
-        }
-        .p-info-value {
-            font-weight: 600;
-            text-align: right;
-            width: 130px;
-        }
-
-        /* Tata Letak Info Penerima */
-        .p-recipient {
-            width: 35%;
-            margin-bottom: 40px;
-            margin-left: auto; /* Posisi di kanan seperti referensi */
-            text-align: right;
-        }
-
-        /* Tabel Deskripsi */
-        .p-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .p-table th {
-            text-align: left;
-            text-transform: uppercase;
-            font-size: 11px;
-            color: #555;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-        }
-        .p-table td {
-            padding: 15px 10px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-        /* Penyesuaian kolom tabel agar mirip referensi */
-        .p-table th:nth-child(1), .p-table td:nth-child(1) { width: 50%; } /* Deskripsi */
-        .p-table th:nth-child(2), .p-table td:nth-child(2) { width: 15%; text-align: right; } /* Harga */
-        .p-table th:nth-child(3), .p-table td:nth-child(3) { width: 10%; text-align: center; } /* Qty */
-        .p-table th:nth-child(4), .p-table td:nth-child(4) { width: 10%; text-align: right; color: #ef4444; } /* Diskon */
-        .p-table th:nth-child(5), .p-table td:nth-child(5) { width: 15%; text-align: right; font-weight: 600; } /* Total */
-
-        /* Bagian Total di Kanan Bawah */
-        .p-total-section {
-            width: 40%;
-            margin-left: auto;
-            text-align: right;
-            margin-bottom: 40px;
-        }
-        .p-total-row {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px 10px;
-            color: #555;
-        }
-        .p-total-final {
-            border-top: 2px solid #ddd;
-            padding-top: 10px;
-            margin-top: 5px;
-            color: #1a73e8; /* Biru seperti referensi */
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* Catatan, Garansi & Metode Pembayaran */
-        .p-footer-notes {
-            font-size: 11px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .p-notes-title {
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .p-notes-list {
-            margin: 0;
-            padding-left: 15px;
-        }
-        .p-notes-list li {
-            margin-bottom: 3px;
-        }
-        
-        .p-thank-you {
-            margin-top: 30px;
-            font-size: 12px;
-        }
-        .p-payment-info {
-            margin-top: 5px;
-            font-weight: 600;
-        }
-
-        /* Pengaturan Cetak Browser */
-        @media print {
-            body {
-                background: #fff;
-                padding: 0;
-                margin: 0;
-                display: block;
-                min-height: auto;
-            }
-            .app-container {
-                display: none; /* Sembunyikan UI web */
-            }
-            #nota-print-area {
-                display: block; /* Tampilkan area cetak profesional */
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 210mm; /* Lebar A4 */
-                min-height: 297mm; /* Tinggi A4 */
-                border: none;
-                box-shadow: none;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="app-container">
-    <div class="header">
-        <div class="logo-container">
-            <svg class="logo-icon" viewBox="0 0 24 24">
-                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-            </svg>
+            <div class="p-info-row"><span class="p-info-label">Jatuh Tempo</span> <span class="p-info-value" id="p_lbl_tanggal_due">-</span></div>
         </div>
-        <h3 class="business-name-ui">Sistem Nota Digital</h3>
-    </div>
-
-    <div class="tabs">
-        <button class="tab-button active" onclick="switchTab('input-tab')">Input Nota Baru</button>
-        <button class="tab-button" onclick="switchTab('cari-tab')">Cari Nota Pelanggan</button>
-    </div>
-
-    <div id="input-tab" class="tab-content active">
-        <form id="form-input" onsubmit="simpanNota(event)">
-            <div class="form-group">
-                <label>Nama Customer</label>
-                <input type="text" id="inp_nama" placeholder="Nama Lengkap" required>
-            </div>
-            <div class="form-group">
-                <label>Nomor Telepon / WA (Awali 08... atau 62...)</label>
-                <input type="tel" id="inp_hp" placeholder="Contoh: 0812345678" required>
-            </div>
-            <div class="form-group">
-                <label>PIN Layar / Sandi HP</label>
-                <input type="text" id="inp_pin" placeholder="Isi '-' jika tidak ada" required>
-            </div>
-            <div class="form-group">
-                <label>Detail Perbaikan / Jasa</label>
-                <textarea id="inp_perbaikan" placeholder="Deskripsi kerusakan dan sparepart yang diganti" required></textarea>
-            </div>
-            <div class="form-group">
-                <label>Harga / Biaya (Rp)</label>
-                <input type="number" id="inp_harga" placeholder="Contoh: 150000" required>
-            </div>
-            <button type="submit" class="btn-submit">Simpan & Buat Nota</button>
-        </form>
-        <div id="input-status" class="status-message"></div>
-    </div>
-
-    <div id="cari-tab" class="tab-content">
-        <div class="form-group">
-            <label>Masukkan Nomor Nota</label>
-            <input type="text" id="search_nota" placeholder="Contoh: REPAIR-1001">
-        </div>
-        <button onclick="cariNota()" class="btn-submit">Cari Nota</button>
-        <div id="search-status" class="status-message"></div>
-
-        <div id="nota-box" style="display: none;">
-            <div style="text-align: center; color: var(--success); background-color: var(--success-light); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2);">
-                <strong>Nota Berhasil Ditemukan!</strong><br>
-                Gunakan tombol di bawah untuk mencetak atau mengirim.
-            </div>
-
-            <div class="nota-footer-ui">
-                <button class="btn-action-ui btn-wa-self-ui" onclick="kirimNotaKeWA()">💬 Kirim Nota ke WA Saya</button>
-                <button class="btn-action-ui btn-download-ui" onclick="window.print()">💾 Simpan / Cetak PDF</button>
-                <button class="btn-action-ui btn-cs-ui" onclick="hubungiOwner()">📞 Hubungi CS Toko</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="nota-print-area">
-    
-    <div class="p-header-main">
-        <div class="p-sender">
-            <div class="p-logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1e3a8a"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                <span class="p-business-name-target">PRO PHONE SERVICE</span> </div>
-            <div class="p-info-block-title">DARI (PENGIRIM)</div>
-            <div class="p-sender-info">
-                <div style="font-weight: 600;" class="p-business-name-target">PRO PHONE SERVICE</div>
-                <div class="p-sender-address">
-                    Jl. Rajawali 2 No 22 RT 03 / RW 04, Kelurahan Margasari,<br>
-                    Kecamatan Tigaraksa, Kabupaten Tangerang,<br>
-                    Banten 15720<br>
-                    6285210987654 </div>
-            </div>
-        </div>
-        <div class="p-invoice-info">
-            <div class="p-invoice-title">INVOICE</div>
-            <div class="p-info-row"><span class="p-info-label">No. Invoice</span> <span class="p-info-value" id="p_lbl_nota">INV-xxxx</span></div>
-            <div class="p-info-row"><span class="p-info-label">Tanggal</span> <span class="p-info-value" id="p_lbl_tanggal">-</span></div>
-            <div class="p-info-row"><span class="p-info-label">Jatuh Tempo</span> <span class="p-info-value" id="p_lbl_tanggal_due">-</span></div> </div>
     </div>
 
     <div class="p-recipient">
         <div class="p-info-block-title">KEPADA (PENERIMA)</div>
         <div class="p-recipient-info">
-            <div style="font-weight: 600;" id="p_lbl_nama">-</div>
-            <div style="font-size: 11px; color: #555;">
+            <div style="font-weight: 600; text-transform: uppercase;" id="p_lbl_nama">-</div>
+            <div style="font-size: 11px; color: #555; margin-top: 4px;">
                 No. HP: <span id="p_lbl_hp">-</span><br>
                 PIN Layar: <span id="p_lbl_pin">-</span>
             </div>
@@ -1024,20 +397,20 @@
     <table class="p-table">
         <thead>
             <tr>
-                <th>Deskripsi</th>
-                <th>Harga</th>
-                <th>Qty</th>
-                <th>Diskon</th>
-                <th>Total</th>
+                <th>Deskripsi Item Perbaikan / Jasa</th>
+                <th style="text-align: right;">Harga</th>
+                <th style="text-align: center;">Qty</th>
+                <th style="text-align: right;">Diskon</th>
+                <th style="text-align: right;">Total</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td id="p_lbl_perbaikan" style="white-space: pre-wrap;">-</td>
-                <td id="p_lbl_harga_unit">Rp 0</td>
-                <td>1</td>
-                <td>-Rp 0</td>
-                <td id="p_lbl_harga_total">Rp 0</td>
+                <td id="p_lbl_perbaikan" style="white-space: pre-wrap; text-align: left;">-</td>
+                <td id="p_lbl_harga_unit" style="text-align: right;">Rp 0</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: right; color: #ef4444;">-Rp 0</td>
+                <td id="p_lbl_harga_total" style="text-align: right;">Rp 0</td>
             </tr>
         </tbody>
     </table>
@@ -1053,758 +426,7 @@
     </div>
 
     <div class="p-footer-notes">
-        <div class="p-notes-title">Catatan:</div>
-        <ul class="p-notes-list">
-            <li>Garansi bisa di klaim apabila produk atau pelayanan tidak sesuai definisi yang sudah dikonfirmasikan sebelumnya.</li>
-            <li>Garansi tidak bisa diklaim apabila kerusakan terjadi akibat kecerobohan atau ketidaksengajaan seperti HP terjatuh, terkena air, overcharge dan lain-lain.</li>
-            <li>Garansi standar memiliki kadaluarsa 1 bulan dimulai sejak perbaikan selesai.</li>
-            <li>Apabila pembayaran tidak sesuai dengan konfirmasi awal atau adanya negosiasi yang membuat penyedia jasa memberikan diskon atau potongan harga, maka penerima jasa tidak mendapat garansi apapun.```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Nota Digital - Profesional Edition</title>
-    <style>
-        :root {
-            --primary: #1a73e8;
-            --primary-hover: #1557b0;
-            --primary-light: #e8f0fe;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --success: #10b981;
-            --success-light: #ecfdf5;
-            --error: #ef4444;
-            --error-light: #fef2f2;
-            --wa-color: #25d366;
-            --wa-hover: #20ba5a;
-            
-            /* Efek Bayangan Tipis */
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-            --shadow-focus: 0 0 0 4px rgba(26, 115, 232, 0.15);
-            
-            /* Animasi Transisi Halus */
-            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        /* Container Web Utama */
-        .app-container {
-            background: #ffffff;
-            padding: 40px 32px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            width: 100%;
-            max-width: 480px;
-            box-sizing: border-box;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: var(--transition-smooth);
-        }
-
-        /* Header UI Web */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .logo-container {
-            width: 56px;
-            height: 56px;
-            background-color: var(--primary-light);
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            fill: var(--primary);
-        }
-        .business-name-ui {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            color: #0f172a;
-        }
-
-        /* Navigasi Tab */
-        .tabs {
-            display: flex;
-            background-color: #f1f5f9;
-            padding: 6px;
-            border-radius: 10px;
-            margin-bottom: 28px;
-            gap: 4px;
-        }
-        .tab-button {
-            flex: 1;
-            padding: 10px 12px;
-            background: none;
-            border: none;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition-smooth);
-        }
-        .tab-button.active {
-            background-color: #ffffff;
-            color: var(--primary);
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        /* Konten Form */
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-        label {
-            display: block;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 14px;
-            color: var(--text-color);
-            transition: var(--transition-smooth);
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-focus);
-        }
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        button.btn-submit {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-        }
-        button.btn-submit:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Pesan Status */
-        .status-message {
-            margin-top: 20px;
-            font-size: 13.5px;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            display: none;
-        }
-        .status-error { background-color: var(--error-light); color: var(--error); display: block; }
-        .status-loading { background-color: var(--primary-light); color: var(--primary); display: block; }
-        .status-success { background-color: var(--success-light); color: var(--success); display: block; }
-
-        /* Wadah Nota saat Tampil di Web */
-        #nota-box {
-            margin-top: 24px;
-        }
-
-        /* 3 Tombol Action Footer (Tetap Tampil di Web) */
-        .nota-footer-ui {
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .btn-action-ui {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Nota Digital - Profesional Edition</title>
-    <style>
-        :root {
-            --primary: #1a73e8;
-            --primary-hover: #1557b0;
-            --primary-light: #e8f0fe;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --success: #10b981;
-            --success-light: #ecfdf5;
-            --error: #ef4444;
-            --error-light: #fef2f2;
-            --wa-color: #25d366;
-            --wa-hover: #20ba5a;
-            
-            /* Efek Bayangan Tipis */
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-            --shadow-focus: 0 0 0 4px rgba(26, 115, 232, 0.15);
-            
-            /* Animasi Transisi Halus */
-            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        /* Container Web Utama */
-        .app-container {
-            background: #ffffff;
-            padding: 40px 32px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            width: 100%;
-            max-width: 480px;
-            box-sizing: border-box;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: var(--transition-smooth);
-        }
-
-        /* Header UI Web */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .logo-container {
-            width: 56px;
-            height: 56px;
-            background-color: var(--primary-light);
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            fill: var(--primary);
-        }
-        .business-name-ui {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            color: #0f172a;
-        }
-
-        /* Navigasi Tab */
-        .tabs {
-            display: flex;
-            background-color: #f1f5f9;
-            padding: 6px;
-            border-radius: 10px;
-            margin-bottom: 28px;
-            gap: 4px;
-        }
-        .tab-button {
-            flex: 1;
-            padding: 10px 12px;
-            background: none;
-            border: none;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition-smooth);
-        }
-        .tab-button.active {
-            background-color: #ffffff;
-            color: var(--primary);
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        /* Konten Form */
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-        label {
-            display: block;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 14px;
-            color: var(--text-color);
-            transition: var(--transition-smooth);
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-focus);
-        }
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        button.btn-submit {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-        }
-        button.btn-submit:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Pesan Status */
-        .status-message {
-            margin-top: 20px;
-            font-size: 13.5px;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            display: none;
-        }
-        .status-error { background-color: var(--error-light); color: var(--error); display: block; }
-        .status-loading { background-color: var(--primary-light); color: var(--primary); display: block; }
-        .status-success { background-color: var(--success-light); color: var(--success); display: block; }
-
-        /* Wadah Nota saat Tampil di Web */
-        #nota-box {
-            margin-top: 24px;
-        }
-
-        /* 3 Tombol Action Footer (Tetap Tampil di Web) */
-        .nota-footer-ui {
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .btn-action-ui {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            text-decoration: none;
-        }
-        .btn-wa-self-ui {
-            background-color: var(--wa-color);
-            color: white;
-        }
-        .btn-wa-self-ui:hover { background-color: var(--wa-hover); }
-        .btn-download-ui {
-            background-color: #334155;
-            color: white;
-        }
-        .btn-download-ui:hover { background-color: #1e293b; }
-        .btn-cs-ui {
-            background-color: #ffffff;
-            color: #334155;
-            border: 1.5px solid var(--border-color);
-        }
-        .btn-cs-ui:hover { background-color: #f8fafc; }
-
-        /* ========================================= */
-        /* CSS KHUSUS UNTUK TAMPILAN CETAK PDF */
-        /* INI YANG MENGUBAH LAYOUT SESUAI GAMBAR */
-        /* ========================================= */
-        
-        #nota-print-area {
-            display: none; /* Sembunyikan di layar web biasa */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333;
-            line-height: 1.4;
-            width: 100%;
-            background: #fff;
-            padding: 40px;
-            box-sizing: border-box;
-            font-size: 12px;
-        }
-
-        /* Tata Letak Header Nota */
-        .p-header-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 40px;
-        }
-
-        /* Kolom Kiri: Logo & Info Pengirim */
-        .p-sender {
-            width: 50%;
-        }
-        .p-logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1e3a8a; /* Warna biru profesional */
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .p-info-block-title {
-            text-transform: uppercase;
-            font-size: 11px;
-            color: #777;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .p-sender-address {
-            font-size: 11px;
-            color: #555;
-        }
-
-        /* Kolom Kanan: Judul Invoice, No, Tanggal */
-        .p-invoice-info {
-            width: 40%;
-            text-align: right;
-        }
-        .p-invoice-title {
-            font-size: 32px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #111;
-            margin-bottom: 10px;
-        }
-        .p-info-row {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 3px;
-        }
-        .p-info-label {
-            color: #777;
-            width: 90px;
-            text-align: left;
-        }
-        .p-info-value {
-            font-weight: 600;
-            text-align: right;
-            width: 130px;
-        }
-
-        /* Tata Letak Info Penerima */
-        .p-recipient {
-            width: 35%;
-            margin-bottom: 40px;
-            margin-left: auto; /* Posisi di kanan seperti referensi */
-            text-align: right;
-        }
-
-        /* Tabel Deskripsi */
-        .p-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .p-table th {
-            text-align: left;
-            text-transform: uppercase;
-            font-size: 11px;
-            color: #555;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-        }
-        .p-table td {
-            padding: 15px 10px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-        /* Penyesuaian kolom tabel agar mirip referensi */
-        .p-table th:nth-child(1), .p-table td:nth-child(1) { width: 50%; } /* Deskripsi */
-        .p-table th:nth-child(2), .p-table td:nth-child(2) { width: 15%; text-align: right; } /* Harga */
-        .p-table th:nth-child(3), .p-table td:nth-child(3) { width: 10%; text-align: center; } /* Qty */
-        .p-table th:nth-child(4), .p-table td:nth-child(4) { width: 10%; text-align: right; color: #ef4444; } /* Diskon */
-        .p-table th:nth-child(5), .p-table td:nth-child(5) { width: 15%; text-align: right; font-weight: 600; } /* Total */
-
-        /* Bagian Total di Kanan Bawah */
-        .p-total-section {
-            width: 40%;
-            margin-left: auto;
-            text-align: right;
-            margin-bottom: 40px;
-        }
-        .p-total-row {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px 10px;
-            color: #555;
-        }
-        .p-total-final {
-            border-top: 2px solid #ddd;
-            padding-top: 10px;
-            margin-top: 5px;
-            color: #1a73e8; /* Biru seperti referensi */
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* Catatan, Garansi & Metode Pembayaran */
-        .p-footer-notes {
-            font-size: 11px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .p-notes-title {
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .p-notes-list {
-            margin: 0;
-            padding-left: 15px;
-        }
-        .p-notes-list li {
-            margin-bottom: 3px;
-        }
-        
-        .p-thank-you {
-            margin-top: 30px;
-            font-size: 12px;
-        }
-        .p-payment-info {
-            margin-top: 5px;
-            font-weight: 600;
-        }
-
-        /* Pengaturan Cetak Browser */
-        @media print {
-            body {
-                background: #fff;
-                padding: 0;
-                margin: 0;
-                display: block;
-                min-height: auto;
-            }
-            .app-container {
-                display: none; /* Sembunyikan UI web */
-            }
-            #nota-print-area {
-                display: block; /* Tampilkan area cetak profesional */
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 210mm; /* Lebar A4 */
-                min-height: 297mm; /* Tinggi A4 */
-                border: none;
-                box-shadow: none;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="app-container">
-    <div class="header">
-        <div class="logo-container">
-            <svg class="logo-icon" viewBox="0 0 24 24">
-                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-            </svg>
-        </div>
-        <h3 class="business-name-ui">Sistem Nota Digital</h3>
-    </div>
-
-    <div class="tabs">
-        <button class="tab-button active" onclick="switchTab('input-tab')">Input Nota Baru</button>
-        <button class="tab-button" onclick="switchTab('cari-tab')">Cari Nota Pelanggan</button>
-    </div>
-
-    <div id="input-tab" class="tab-content active">
-        <form id="form-input" onsubmit="simpanNota(event)">
-            <div class="form-group">
-                <label>Nama Customer</label>
-                <input type="text" id="inp_nama" placeholder="Nama Lengkap" required>
-            </div>
-            <div class="form-group">
-                <label>Nomor Telepon / WA (Awali 08... atau 62...)</label>
-                <input type="tel" id="inp_hp" placeholder="Contoh: 0812345678" required>
-            </div>
-            <div class="form-group">
-                <label>PIN Layar / Sandi HP</label>
-                <input type="text" id="inp_pin" placeholder="Isi '-' jika tidak ada" required>
-            </div>
-            <div class="form-group">
-                <label>Detail Perbaikan / Jasa</label>
-                <textarea id="inp_perbaikan" placeholder="Deskripsi kerusakan dan sparepart yang diganti" required></textarea>
-            </div>
-            <div class="form-group">
-                <label>Harga / Biaya (Rp)</label>
-                <input type="number" id="inp_harga" placeholder="Contoh: 150000" required>
-            </div>
-            <button type="submit" class="btn-submit">Simpan & Buat Nota</button>
-        </form>
-        <div id="input-status" class="status-message"></div>
-    </div>
-
-    <div id="cari-tab" class="tab-content">
-        <div class="form-group">
-            <label>Masukkan Nomor Nota</label>
-            <input type="text" id="search_nota" placeholder="Contoh: REPAIR-1001">
-        </div>
-        <button onclick="cariNota()" class="btn-submit">Cari Nota</button>
-        <div id="search-status" class="status-message"></div>
-
-        <div id="nota-box" style="display: none;">
-            <div style="text-align: center; color: var(--success); background-color: var(--success-light); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2);">
-                <strong>Nota Berhasil Ditemukan!</strong><br>
-                Gunakan tombol di bawah untuk mencetak atau mengirim.
-            </div>
-
-            <div class="nota-footer-ui">
-                <button class="btn-action-ui btn-wa-self-ui" onclick="kirimNotaKeWA()">💬 Kirim Nota ke WA Saya</button>
-                <button class="btn-action-ui btn-download-ui" onclick="window.print()">💾 Simpan / Cetak PDF</button>
-                <button class="btn-action-ui btn-cs-ui" onclick="hubungiOwner()">📞 Hubungi CS Toko</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="nota-print-area">
-    
-    <div class="p-header-main">
-        <div class="p-sender">
-            <div class="p-logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1e3a8a"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                <span class="p-business-name-target">PRO PHONE SERVICE</span> </div>
-            <div class="p-info-block-title">DARI (PENGIRIM)</div>
-            <div class="p-sender-info">
-                <div style="font-weight: 600;" class="p-business-name-target">PRO PHONE SERVICE</div>
-                <div class="p-sender-address">
-                    Jl. Rajawali 2 No 22 RT 03 / RW 04, Kelurahan Margasari,<br>
-                    Kecamatan Tigaraksa, Kabupaten Tangerang,<br>
-                    Banten 15720<br>
-                    6285210987654 </div>
-            </div>
-        </div>
-        <div class="p-invoice-info">
-            <div class="p-invoice-title">INVOICE</div>
-            <div class="p-info-row"><span class="p-info-label">No. Invoice</span> <span class="p-info-value" id="p_lbl_nota">INV-xxxx</span></div>
-            <div class="p-info-row"><span class="p-info-label">Tanggal</span> <span class="p-info-value" id="p_lbl_tanggal">-</span></div>
-            <div class="p-info-row"><span class="p-info-label">Jatuh Tempo</span> <span class="p-info-value" id="p_lbl_tanggal_due">-</span></div> </div>
-    </div>
-
-    <div class="p-recipient">
-        <div class="p-info-block-title">KEPADA (PENERIMA)</div>
-        <div class="p-recipient-info">
-            <div style="font-weight: 600;" id="p_lbl_nama">-</div>
-            <div style="font-size: 11px; color: #555;">
-                No. HP: <span id="p_lbl_hp">-</span><br>
-                PIN Layar: <span id="p_lbl_pin">-</span>
-            </div>
-        </div>
-    </div>
-
-    <table class="p-table">
-        <thead>
-            <tr>
-                <th>Deskripsi</th>
-                <th>Harga</th>
-                <th>Qty</th>
-                <th>Diskon</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="p_lbl_perbaikan" style="white-space: pre-wrap;">-</td>
-                <td id="p_lbl_harga_unit">Rp 0</td>
-                <td>1</td>
-                <td>-Rp 0</td>
-                <td id="p_lbl_harga_total">Rp 0</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="p-total-section">
-        <div class="p-total-row"><span>Subtotal</span> <span style="width: 130px;" id="p_lbl_subtotal">Rp 0</span></div>
-        <div class="p-total-row"><span>Diskon</span> <span style="width: 130px; color: #ef4444;">-Rp 0</span></div>
-        <div class="p-total-row"><span>PPN (0%)</span> <span style="width: 130px;">Rp 0</span></div>
-        <div class="p-total-row p-total-final">
-            <span style="color: #111; font-weight: bold; text-transform: uppercase;">Total Tagihan</span>
-            <span style="width: 130px;" id="p_lbl_final_total">Rp 0</span>
-        </div>
-    </div>
-
-    <div class="p-footer-notes">
-        <div class="p-notes-title">Catatan:</div>
+        <div class="p-notes-title">Catatan & Ketentuan Garansi:</div>
         <ul class="p-notes-list">
             <li>Garansi bisa di klaim apabila produk atau pelayanan tidak sesuai definisi yang sudah dikonfirmasikan sebelumnya.</li>
             <li>Garansi tidak bisa diklaim apabila kerusakan terjadi akibat kecerobohan atau ketidaksengajaan seperti HP terjatuh, terkena air, overcharge dan lain-lain.</li>
@@ -1814,24 +436,23 @@
         </ul>
         
         <div class="p-thank-you">
-            Terima kasih atas kerja sama Anda.<br>
-            <div class="p-payment-info">Mohon transfer pembayaran ke: BCA 123456789 a.n NAMA ANDA</div> </div>
+            Terima kasih atas kepercayaan Anda.<br>
+            <div class="p-payment-info">Metode Pembayaran: Cash / Transfer BCA 123456789 a.n NAMA ANDA</div>
+        </div>
     </div>
 </div>
-
 
 <script>
     // ==========================================
     // !!! KONFIGURASI WAJIB DIUBAH !!!
     // ==========================================
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyV444AsCfW1eTlGJ6Hmggr2KXa5ctCMNdcdMi6BOSFsY3gJYy3dCKef7eE9RuDWqbvEQ/exec";
-    const NOMOR_WA_CS = "62895413994246"; // Nomor CS/Owner (format 62...)
-    const NAMA_BISNIS = "IFRONTEOOM SERVICE"; // Ganti nama bisnis Anda
+    const NOMOR_WA_CS = "62895413994246"; 
+    const NAMA_BISNIS = "IFRONTROOM SERVICE"; 
     // ==========================================
 
     let dataNotaAktif = null;
 
-    // Set nama bisnis di UI Web saat load
     window.onload = function() {
         document.querySelectorAll('.business-name-ui').forEach(el => el.textContent = NAMA_BISNIS);
     };
@@ -1843,20 +464,46 @@
         event.currentTarget.classList.add('active');
         document.getElementById('input-status').style.display = 'none';
         document.getElementById('search-status').style.display = 'none';
+        document.getElementById('nota-box').style.display = 'none';
     }
 
-    // Helper: Hitung Jatuh Tempo (7 Hari)
     function hitungDueDate(tanggalStr) {
         if(!tanggalStr) return "-";
-        const parts = tanggalStr.split('/');
-        const tgl = new Date(parts[2], parts[1]-1, parts[0]);
-        tgl.setDate(tgl.getDate() + 7);
-        return ('0' + tgl.getDate()).slice(-2) + '/' + ('0' + (tgl.getMonth()+1)).slice(-2) + '/' + tgl.getFullYear();
+        try {
+            const parts = tanggalStr.split('/');
+            const tgl = new Date(parts[2], parts[1]-1, parts[0]);
+            tgl.setDate(tgl.getDate() + 30); // Jatuh tempo garansi 1 bulan sesuai catatan
+            return ('0' + tgl.getDate()).slice(-2) + '/' + ('0' + (tgl.getMonth()+1)).slice(-2) + '/' + tgl.getFullYear();
+        } catch(e) { return "-"; }
     }
 
+    // FUNGSI INJEKSI DATA KE TEMPLATE PDF
+    function pasangDataKeNotaCetak(data) {
+        document.querySelectorAll('.p-business-name-target').forEach(el => el.textContent = NAMA_BISNIS);
+        
+        document.getElementById('p_lbl_nota').textContent = "INV-" + data.no_nota;
+        document.getElementById('p_lbl_tanggal').textContent = data.tanggal;
+        document.getElementById('p_lbl_tanggal_due').textContent = hitungDueDate(data.tanggal);
+        
+        document.getElementById('p_lbl_nama').textContent = data.nama_customer.toUpperCase();
+        document.getElementById('p_lbl_hp').textContent = data.no_telepon;
+        document.getElementById('p_lbl_pin').textContent = data.pin_layar;
+        
+        document.getElementById('p_lbl_perbaikan').textContent = data.perbaikan.toUpperCase();
+        
+        const formattedHarga = "Rp " + Number(data.harga).toLocaleString('id-ID');
+        document.getElementById('p_lbl_harga_unit').textContent = formattedHarga;
+        document.getElementById('p_lbl_harga_total').textContent = formattedHarga;
+        document.getElementById('p_lbl_subtotal').textContent = formattedHarga;
+        document.getElementById('p_lbl_final_total').textContent = formattedHarga;
+    }
+
+    // FUNGSI SIMPAN DATA (FORM -> SHEETS -> LANGSUNG MUNTAH KE PDF)
     async function simpanNota(event) {
         event.preventDefault();
         const statusDiv = document.getElementById('input-status');
+        const notaBox = document.getElementById('nota-box');
+        
         let hpInput = document.getElementById('inp_hp').value.trim();
         if (hpInput.startsWith("0")) hpInput = "62" + hpInput.slice(1);
 
@@ -1870,75 +517,110 @@
         };
 
         statusDiv.className = "status-message status-loading";
-        statusDiv.textContent = "Menyimpan data...";
+        statusDiv.textContent = "Sedang mendaftarkan nota ke sistem Google Sheets...";
+        statusDiv.style.display = 'block';
+        notaBox.style.display = 'none';
 
         try {
             const response = await fetch(WEB_APP_URL, { method: "POST", body: JSON.stringify(payload) });
             const data = await response.json();
+            
             if (data.status === "success") {
-                statusDiv.className = "status-message status-success";
-                statusDiv.innerHTML = `Sukses! Nota disimpan. No: <strong>${data.no_nota}</strong>`;
+                statusDiv.style.display = 'none';
+                
+                // Ambil tanggal hari ini untuk disuntikkan ke tampilan cetak secara instan
+                const hariIni = new Date();
+                const tglString = ('0' + hariIni.getDate()).slice(-2) + '/' + ('0' + (hariIni.getMonth()+1)).slice(-2) + '/' + hariIni.getFullYear();
+                
+                // Gabungkan respons nomor nota dari Google dengan input data form
+                dataNotaAktif = {
+                    no_nota: data.no_nota,
+                    tanggal: tglString,
+                    nama_customer: payload.nama_customer,
+                    no_telepon: payload.no_telepon,
+                    pin_layar: payload.pin_layar,
+                    perbaikan: payload.perbaikan,
+                    harga: payload.harga
+                };
+
+                // Lempar data ke area print A4
+                pasangDataKeNotaCetak(dataNotaAktif);
+
+                // Tampilkan tombol cetak di bawah form secara otomatis
+                document.getElementById('alert-success-msg').innerHTML = `<strong>Sukses Membuat Nota!</strong><br>Nomor Nota Baru Anda: <strong>INV-${data.no_nota}</strong>`;
+                notaBox.style.display = 'block';
+                
                 document.getElementById('form-input').reset();
-            } else { statusDiv.className = "status-message status-error"; statusDiv.textContent = data.message; }
-        } catch (error) { statusDiv.className = "status-message status-error"; statusDiv.textContent = "Gagal terhubung."; }
+            } else {
+                statusDiv.className = "status-message status-error";
+                statusDiv.textContent = data.message;
+            }
+        } catch (error) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Gagal memproses data. Periksa jaringan Anda.";
+        }
     }
 
+    // FUNGSI CARI DATA
     async function cariNota() {
         const noNota = document.getElementById('search_nota').value.trim();
         const statusDiv = document.getElementById('search-status');
         const notaBox = document.getElementById('nota-box');
 
-        if (!noNota) { statusDiv.className = "status-message status-error"; statusDiv.textContent = "Masukkan no nota!"; return; }
+        if (!noNota) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Ketikkan nomor nota terlebih dahulu!";
+            statusDiv.style.display = 'block';
+            return;
+        }
 
-        statusDiv.className = "status-message status-loading"; statusDiv.textContent = "Mencari..."; notaBox.style.display = 'none';
+        statusDiv.className = "status-message status-loading";
+        statusDiv.textContent = "Menghubungi database...";
+        statusDiv.style.display = 'block';
+        notaBox.style.display = 'none';
 
         try {
             const response = await fetch(WEB_APP_URL, { method: "POST", body: JSON.stringify({ action: "cari_nota", no_nota: noNota }) });
             const data = await response.json();
 
             if (data.status === "success") {
-                statusDiv.style.display = 'none'; dataNotaAktif = data;
+                statusDiv.style.display = 'none';
+                dataNotaAktif = data;
 
-                // Set Nama Bisnis Dinamis di Layout Cetak
-                document.querySelectorAll('.p-business-name-target').forEach(el => el.textContent = NAMA_BISNIS);
+                // Lempar data ke area print A4
+                pasangDataKeNotaCetak(dataNotaAktif);
 
-                // ISI DATA KE STRUKTUR CETAK BARU
-                document.getElementById('p_lbl_nota').textContent = "INV-"+data.no_nota; // INV prefix
-                document.getElementById('p_lbl_tanggal').textContent = data.tanggal;
-                document.getElementById('p_lbl_tanggal_due').textContent = hitungDueDate(data.tanggal);
-                
-                document.getElementById('p_lbl_nama').textContent = data.nama_customer.toUpperCase();
-                document.getElementById('p_lbl_hp').textContent = data.no_telepon;
-                document.getElementById('p_lbl_pin').textContent = data.pin_layar;
-                
-                document.getElementById('p_lbl_perbaikan').textContent = data.perbaikan.toUpperCase();
-                
-                const formattedHarga = "Rp " + Number(data.harga).toLocaleString('id-ID');
-                document.getElementById('p_lbl_harga_unit').textContent = formattedHarga;
-                document.getElementById('p_lbl_harga_total').textContent = formattedHarga;
-                document.getElementById('p_lbl_subtotal').textContent = formattedHarga;
-                document.getElementById('p_lbl_final_total').textContent = formattedHarga;
-
+                document.getElementById('alert-success-msg').innerHTML = `<strong>Nota Berhasil Ditemukan!</strong><br>Siap dicetak atau dikirim ke WhatsApp.`;
                 notaBox.style.display = 'block';
-            } else { statusDiv.className = "status-message status-error"; statusDiv.textContent = data.message; }
-        } catch (error) { statusDiv.className = "status-message status-error"; statusDiv.textContent = "Gagal menyambung."; }
+            } else {
+                statusDiv.className = "status-message status-error";
+                statusDiv.textContent = data.message;
+            }
+        } catch (error) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Koneksi terputus saat mengambil data.";
+        }
     }
 
     function kirimNotaKeWA() {
         if (!dataNotaAktif) return;
         const formattedHarga = "Rp " + Number(dataNotaAktif.harga).toLocaleString('id-ID');
         const teksWA = `*INVOICE SERVICE - ${NAMA_BISNIS}*\n` +
-                      `No: INV-${dataNotaAktif.no_nota}\n` +
-                      `Customer: ${dataNotaAktif.nama_customer}\n` +
-                      `Perbaikan: ${dataNotaAktif.perbaikan}\n` +
-                      `*Total: ${formattedHarga}*\n` +
-                      `Syarat & Garansi berlaku. Cek detail: ${window.location.href}`;
+                      `-----------------------------------\n` +
+                      `🧾 *No. Invoice:* INV-${dataNotaAktif.no_nota}\n` +
+                      `📅 *Tanggal:* ${dataNotaAktif.tanggal}\n` +
+                      `👤 *Pelanggan:* ${dataNotaAktif.nama_customer.toUpperCase()}\n` +
+                      `🔧 *Kerusakan & Perbaikan:* \n_${dataNotaAktif.perbaikan.toUpperCase()}_\n` +
+                      `-----------------------------------\n` +
+                      `💰 *TOTAL TAGIHAN:* *${formattedHarga}*\n` +
+                      `-----------------------------------\n` +
+                      `Nota resmi digital Anda telah diterbitkan. Terima kasih!`;
         window.open(`https://api.whatsapp.com/send?phone=${dataNotaAktif.no_telepon}&text=${encodeURIComponent(teksWA)}`, '_blank');
     }
 
     function hubungiOwner() {
         if (!dataNotaAktif) return;
-        const teksCS = `Halo ${NAMA_BISNIS}, tanya status INV-${dataNotaAktif.no_nota} a.n ${dataNotaAktif.nama_customer}.`;
+        const teksCS = `Halo ${NAMA_BISNIS}, saya ingin menanyakan perihal nomor Invoice INV-${dataNotaAktif.no_nota} atas nama ${dataNotaAktif.nama_customer}.`;
         window.open(`https://api.whatsapp.com/send?phone=${NOMOR_WA_CS}&text=${encodeURIComponent(teksCS)}`, '_blank');
     }
 </script>

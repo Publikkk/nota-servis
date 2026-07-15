@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Nota Digital - IFRONTROOM SERVICE</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-hover: #1557b0;
+            --primary-light: #e8f0fe;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --success-hover: #059669;
+            --success-light: #ecfdf5;
+            --error: #ef4444;
+            --error-light: #fef2f2;
+            --wa-color: #25d366;
+            --wa-hover: #20ba5a;
+            
+            /* Efek Bayangan Tipis & Lembut (Soft Ambient Shadows) */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            --shadow-focus: 0 0 0 4px rgba(26, 115, 232, 0.15);
+            
+            /* Animasi Transisi Halus */
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Container Web Utama */
+        .app-container {
+            background: #ffffff;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 480px;
+            box-sizing: border-box;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: var(--transition-smooth);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            width: 56px;
+            height: 56px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+            transition: var(--transition-smooth);
+        }
+        .logo-container:hover {
+            transform: scale(1.08) rotate(5deg);
+        }
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary);
+        }
+        .business-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+            color: #0f172a;
+        }
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 6px 0 0 0;
+            font-weight: 500;
+        }
+
+        /* Navigasi Tab Modern */
+        .tabs {
+            display: flex;
+            background-color: #f1f5f9;
+            padding: 6px;
+            border-radius: 10px;
+            margin-bottom: 28px;
+            gap: 4px;
+        }
+        .tab-button {
+            flex: 1;
+            padding: 10px 12px;
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+        }
+        .tab-button:hover {
+            color: var(--text-color);
+        }
+        .tab-button.active {
+            background-color: #ffffff;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Konten Form & Tab */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text-color);
+            background-color: #fdfdfd;
+            transition: var(--transition-smooth);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #ffffff;
+            box-shadow: var(--shadow-focus);
+        }
+        input::placeholder, textarea::placeholder {
+            color: #94a3b8;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Tombol Utama */
+        button.btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.15);
+        }
+        button.btn-submit:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(26, 115, 232, 0.25);
+        }
+        button.btn-submit:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 6px rgba(26, 115, 232, 0.15);
+        }
+
+        /* Pesan Status */
+        .status-message {
+            margin-top: 20px;
+            font-size: 13.5px;
+            text-align: center;
+            min-height: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            line-height: 1.5;
+            animation: fadeIn 0.25s ease-out;
+        }
+        .status-error { background-color: var(--error-light); color: var(--error); display: block; border: 1px solid rgba(239, 68, 68, 0.15); }
+        .status-loading { background-color: var(--primary-light); color: var(--primary); display: block; border: 1px solid rgba(26, 115, 232, 0.15); }
+        .status-success { background-color: var(--success-light); color: var(--success); display: block; border: 1px solid rgba(16, 185, 129, 0.15); }
+
+        /* Tampilan Nota (Receipt Card) */
+        .receipt-card {
+            border: 1.5px dashed var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+            background: #fafcff;
+            box-shadow: var(--shadow-sm);
+        }
+        .receipt-header {
+            text-align: center;
+            border-bottom: 1.5px dashed var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 18px;
+        }
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 13.5px;
+            line-height: 1.4;
+        }
+        .receipt-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .receipt-value {
+            font-weight: 600;
+            text-align: right;
+            color: var(--text-color);
+        }
+        .receipt-total {
+            border-top: 1.5px dashed var(--border-color);
+            padding-top: 14px;
+            margin-top: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        /* 3 Tombol Action Footer */
+        .nota-footer {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            box-sizing: border-box;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-wa-self {
+            background-color: var(--wa-color);
+            color: white;
+        }
+        .btn-wa-self:hover {
+            background-color: var(--wa-hover);
+            transform: translateY(-1.5px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+        .btn-wa-self:active {
+            transform: translateY(0);
+        }
+        .btn-download {
+            background-color: #334155;
+            color: white;
+        }
+        .btn-download:hover {
+            background-color: #1e293b;
+            transform: translateY(-1.5px);
+            box-shadow: 0 4px 12px rgba(51, 65, 85, 0.2);
+        }
+        .btn-download:active {
+            transform: translateY(0);
+        }
+        .btn-cs {
+            background-color: #ffffff;
+            color: #334155;
+            border: 1.5px solid var(--border-color);
+            box-shadow: none;
+        }
+        .btn-cs:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            transform: translateY(-1.5px);
+        }
+        .btn-cs:active {
+            transform: translateY(0);
+        }
+
+        /* Aturan Khusus Saat Cetak / Save PDF */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #nota-print-area, #nota-print-area * {
+                visibility: visible;
+            }
+            #nota-print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: none;
+                background: white;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <div class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+        </div>
+        <h3 class="business-name">IFRONTROOM SERVICE</h3>
+        <p class="subtitle">Sistem Pelayanan & Nota Digital</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('input-tab')">Input Nota Baru</button>
+        <button class="tab-button" onclick="switchTab('cari-tab')">Cari Nota Pelanggan</button>
+    </div>
+
+    <div id="input-tab" class="tab-content active">
+        <form id="form-input" onsubmit="simpanNota(event)">
+            <div class="form-group">
+                <label for="inp_nama">Nama Customer</label>
+                <input type="text" id="inp_nama" placeholder="Nama Lengkap" required>
+            </div>
+            <div class="form-group">
+                <label for="inp_hp">Nomor Telepon / WA (Awali 08... atau 62...)</label>
+                <input type="tel" id="inp_hp" placeholder="Contoh: 0812345678" required>
+            </div>
+            <div class="form-group">
+                <label for="inp_pin">PIN Layar / Sandi HP</label>
+                <input type="text" id="inp_pin" placeholder="Isi '-' jika tidak ada" required>
+            </div>
+            <div class="form-group">
+                <label for="inp_perbaikan">Detail Perbaikan / Jasa</label>
+                <textarea id="inp_perbaikan" placeholder="Deskripsi kerusakan dan sparepart yang diganti" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inp_harga">Harga / Biaya (Rp)</label>
+                <input type="number" id="inp_harga" placeholder="Contoh: 150000" required>
+            </div>
+            <button type="submit" class="btn-submit">Simpan & Buat Nota</button>
+        </form>
+        <div id="input-status" class="status-message"></div>
+    </div>
+
+    <div id="cari-tab" class="tab-content">
+        <div class="form-group">
+            <label for="search_nota">Masukkan Nomor Nota</label>
+            <input type="text" id="search_nota" placeholder="Contoh: REPAIR-1001">
+        </div>
+        <button onclick="cariNota()" class="btn-submit">Cari Nota</button>
+        <div id="search-status" class="status-message"></div>
+
+        <div id="nota-box" style="display: none;">
+            <div class="receipt-card" id="nota-print-area">
+                <div class="receipt-header">
+                    <div style="font-weight: bold; font-size: 15px; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">NAMA TOKO KAMU</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; font-weight: 500;">Nota Servis Digital</div>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">No. Nota:</span>
+                    <span class="receipt-value" id="lbl_nota">REPAIR-xxxx</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Tanggal:</span>
+                    <span class="receipt-value" id="lbl_tanggal">-</span>
+                </div>
+                <hr style="border: none; border-top: 1.5px dashed var(--border-color); margin: 14px 0;">
+                <div class="receipt-row">
+                    <span class="receipt-label">Nama Pelanggan:</span>
+                    <span class="receipt-value" id="lbl_nama">-</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">No. HP:</span>
+                    <span class="receipt-value" id="lbl_hp">-</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">PIN Layar:</span>
+                    <span class="receipt-value" id="lbl_pin">-</span>
+                </div>
+                <div class="receipt-row" style="flex-direction: column; align-items: flex-start; margin-top: 10px;">
+                    <span class="receipt-label" style="margin-bottom: 4px;">Detail Perbaikan:</span>
+                    <span class="receipt-value" id="lbl_perbaikan" style="text-align: left; width: 100%; white-space: pre-wrap;">-</span>
+                </div>
+                <div class="receipt-row receipt-total">
+                    <span>Total Biaya:</span>
+                    <span id="lbl_harga">Rp 0</span>
+                </div>
+            </div>
+
+            <div class="nota-footer">
+                <button class="btn-action btn-wa-self" onclick="kirimNotaKeWA()">
+                    💬 Kirim Nota ke WA Saya
+                </button>
+                
+                <button class="btn-action btn-download" onclick="window.print()">
+                    💾 Simpan / Cetak PDF
+                </button>
+                
+                <button class="btn-action btn-cs" onclick="hubungiOwner()">
+                    📞 Hubungi CS Toko
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    // !!! KONFIGURASI WAJIB DIUBAH !!!
+    // ==========================================
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxWTjtT0W2XUau__m4WDtLnDztH5vsdYzHDB5u1lnFtf_UyjkheRTa1lx5gBHReF_H3Lg/exec";
+    const NOMOR_WA_OWNER = "62859413994246"; // Ganti dengan nomor WhatsApp Anda (Gunakan format 62...)
+    const NAMA_BISNIS = "IFRONTROOM SERVICE"; // Ganti dengan nama bisnis Anda
+    // ==========================================
+
+    let dataNotaAktif = null;
+
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+        
+        document.getElementById('input-status').style.display = 'none';
+        document.getElementById('search-status').style.display = 'none';
+    }
+
+    async function simpanNota(event) {
+        event.preventDefault();
+        const statusDiv = document.getElementById('input-status');
+        
+        let hpInput = document.getElementById('inp_hp').value.trim();
+        if (hpInput.startsWith("0")) {
+            hpInput = "62" + hpInput.slice(1);
+        }
+
+        const payload = {
+            action: "tambah_nota",
+            nama_customer: document.getElementById('inp_nama').value,
+            no_telepon: hpInput,
+            pin_layar: document.getElementById('inp_pin').value,
+            perbaikan: document.getElementById('inp_perbaikan').value,
+            harga: Number(document.getElementById('inp_harga').value)
+        };
+
+        statusDiv.className = "status-message status-loading";
+        statusDiv.textContent = "Menyimpan data ke sistem...";
+
+        try {
+            const response = await fetch(WEB_APP_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+
+            if (data.status === "success") {
+                statusDiv.className = "status-message status-success";
+                statusDiv.innerHTML = `<strong>Sukses!</strong> Nota disimpan.<br>Nomor Nota baru: <strong>${data.no_nota}</strong><br><small>Berikan nomor ini kepada customer.</small>`;
+                document.getElementById('form-input').reset();
+            } else {
+                statusDiv.className = "status-message status-error";
+                statusDiv.textContent = data.message;
+            }
+        } catch (error) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Gagal terhubung ke sistem.";
+        }
+    }
+
+    async function cariNota() {
+        const noNota = document.getElementById('search_nota').value.trim();
+        const statusDiv = document.getElementById('search-status');
+        const notaBox = document.getElementById('nota-box');
+
+        if (!noNota) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Masukkan nomor nota terlebih dahulu!";
+            return;
+        }
+
+        statusDiv.className = "status-message status-loading";
+        statusDiv.textContent = "Mencari data nota...";
+        notaBox.style.display = 'none';
+
+        try {
+            const response = await fetch(WEB_APP_URL, {
+                method: "POST",
+                body: JSON.stringify({ action: "cari_nota", no_nota: noNota })
+            });
+            const data = await response.json();
+
+            if (data.status === "success") {
+                statusDiv.style.display = 'none';
+                dataNotaAktif = data;
+
+                document.getElementById('lbl_nota').textContent = data.no_nota;
+                document.getElementById('lbl_tanggal').textContent = data.tanggal;
+                document.getElementById('lbl_nama').textContent = data.nama_customer;
+                document.getElementById('lbl_hp').textContent = data.no_telepon;
+                document.getElementById('lbl_pin').textContent = data.pin_layar;
+                document.getElementById('lbl_perbaikan').textContent = data.perbaikan;
+                
+                const formattedHarga = "Rp " + Number(data.harga).toLocaleString('id-ID');
+                document.getElementById('lbl_harga').textContent = formattedHarga;
+
+                notaBox.style.display = 'block';
+            } else {
+                statusDiv.className = "status-message status-error";
+                statusDiv.textContent = data.message;
+            }
+        } catch (error) {
+            statusDiv.className = "status-message status-error";
+            statusDiv.textContent = "Gagal menyambung ke server.";
+        }
+    }
+
+    function kirimNotaKeWA() {
+        if (!dataNotaAktif) return;
+
+        const formattedHarga = "Rp " + Number(dataNotaAktif.harga).toLocaleString('id-ID');
+        
+        const teksWA = `*NOTA DIGITAL - ${NAMA_BISNIS}*\n` +
+                      `------------------------------------\n` +
+                      `🧾 *No. Nota :* ${dataNotaAktif.no_nota}\n` +
+                      `📅 *Tanggal  :* ${dataNotaAktif.tanggal}\n` +
+                      `👤 *Nama     :* ${dataNotaAktif.nama_customer}\n` +
+                      `📱 *No. HP   :* ${dataNotaAktif.no_telepon}\n` +
+                      `🔑 *PIN Layar:* ${dataNotaAktif.pin_layar}\n` +
+                      `🔧 *Perbaikan:* \n_${dataNotaAktif.perbaikan}_\n` +
+                      `------------------------------------\n` +
+                      `💰 *TOTAL BIAYA:* *${formattedHarga}*\n` +
+                      `------------------------------------\n` +
+                      `Terima kasih telah mempercayakan perbaikan Anda kepada kami!`;
+
+        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${dataNotaAktif.no_telepon}&text=${encodeURIComponent(teksWA)}`;
+        window.open(urlWhatsApp, '_blank');
+    }
+
+    function hubungiOwner() {
+        if (!dataNotaAktif) return;
+
+        const pesanCS = `Halo ${NAMA_BISNIS}, saya ingin bertanya mengenai status pengerjaan atau detail dari nota saya dengan nomor *${dataNotaAktif.no_nota}* atas nama *${dataNotaAktif.nama_customer}*.`;
+        
+        const urlCS = `https://api.whatsapp.com/send?phone=${NOMOR_WA_OWNER}&text=${encodeURIComponent(pesanCS)}`;
+        window.open(urlCS, '_blank');
+    }
+</script>
+
+</body>
+</html>
